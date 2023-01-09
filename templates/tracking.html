@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+        <title>Fast Airways Couriers- tracking</title>
+        <!-- General CSS Files -->
+        <link rel="stylesheet" href="bcss/bootstrap.css">
+        <!-- Template CSS -->
+        <link rel="stylesheet" href="css/cstyle.css">
+        <link rel="stylesheet" href="css/components.css">
+      
+        <link rel="shortcut icon" href="img/jpram.png" type="image/x-icon">
+        <!-- Custom style CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+        <link rel="stylesheet" type="text/css" href="anim.css"> 
+        <script type="text/javascript" src='wow.min.js'></script> 
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        
+      
+      </head>
+      
+      <body>
+       
+       <div id="app">
+         <section class="section" >
+           <div class="container mt-5">
+             <div class="row">
+               <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                 <div class="login-brand" style="color:#23108f">
+                
+                    <i class="fab fa-sistrix" style="font-size:30px"></i> TRACK CONSIGNMENT
+                 </div>
+                 <div class="card ">
+                   
+                   <div class="card-body">
+                {% if invalidcode %}
+
+                    <div class="alert alert-danger alert-dismissible big flash animated infinite" data-wow-duration="2s" data-wow-delay="0.1s">
+                  <div class="alert-body col-white text-center">
+                    <button class="close" data-dismiss="alert">
+                      <span>×</span>
+                    </button>
+                    <p class="col-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg> you entered an invalid tracking code please check</p>
+                  </div>
+                </div>
+                {% endif %} 
+
+                                <div class="form-group text-center">
+                   <h4 class="" style="color:#2e567a">CONSIGNMENT TRACKING</h4>
+      <p style="font-weight: 400;">Input the unique tracking number into the box below to track and know the status of of your shipment</p>
+                   <form action="tracking1.php" method="POST" class="needs-validation" novalidate="">
+                        <div class="form-group">
+                          <label for="email" style="font-weight: 500;">Enter Tracking Code <i class="far fa-hand-point-down"></i></label>
+                          <input id="email" type="text" class="form-control"name="trackcode" placeholder="Enter your consignment number" tabindex="1" required autofocus">
+      
+      <div class="invalid-feedback">
+                            Please Enter Your Tracking Code
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" name="track" class="btn col-white btn-success btn-lg btn-block" tabindex="4" style="color:black;">
+                            <i class="fab fa-sistrix"></i> Track
+                          </button>
+                       
+                        </div>
+                      </form>        
+      <br><br>
+      
+                      <nav aria-label="breadcrumb" class="">
+                            <ol class="breadcrumb col-white" style="background:#23108f">
+                              <li class="breadcrumb-item"><a href="index.php" class="col-yellow" style="font-weight: 400;"><i class="fas fa-tachometer-alt"></i> Home</a></li>
+                              <li class="breadcrumb-item"><a href="contact-us.php" class="col-yellow" style="font-weight: 400;"><i class="
+      fas fa-envelope"></i> Support</a></li>
+                              <li class="breadcrumb-item active col-yellow" aria-current="page" style="font-weight: 400;"><i class="far fa-paper-plane"></i>Track</li>
+                            </ol>
+                          </nav>
+      <p class="col-red" style="font-weight: 400;">If There Is An Issue Of Your Product Tracking, We Suggest You Contact Our Support With Your Track Code To Help Attend To You.</p>
+                
+               </div>
+              
+              
+             </div>
+             
+           </div>
+         </section>
+         <div class="simple-footer" style="color:BLACK">
+         <!-- <img src="FASTDELIVERY3.png" alt="" style="width:30%";> -->
+      
+                 </div>
+       </div>
+      
+      
+      
+      
+      
+      
+      
+       <!-- General JS Scripts -->
+       <script src="app.min.js"></script>
+       <!-- JS Libraies -->
+       <script src="apexcharts.min.js"></script>
+       <script src="sweetalert.min.js"></script>
+       <!-- Page Specific JS File -->
+       <script src="sweetalert.js"></script>
+       <!-- Page Specific JS File -->
+       <script src="index.js"></script>
+       <!-- Template JS File -->
+       <script src="scripts.js"></script>
+       <!-- Custom JS File -->
+       <script src="custom.js"></script>
+      
+      <!--Start of Tawk.to Script-->
+      <script type="text/javascript">
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/6068501a067c2605c0bef1e0/1f2bnhqjk';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+      })();
+      </script>
+      <!--End of Tawk.to Script-->
+      
+      
+      </body>
+      
+      
+      </html>
