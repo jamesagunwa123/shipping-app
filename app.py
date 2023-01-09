@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, request
 import requests
+from decouple import config
+
 
 app = Flask(__name__)
 
@@ -49,21 +51,16 @@ def tracking():
 @app.route('/tracking1.php', methods=['GET', 'POST'])
 def tracking1():
 	# example code 630dbf0713f2a
-
 	trackcode = request.form.get('trackcode')
-	url_get = 'https://www.fastairwaycouriers.com/tracking.php'
-	url_post = 'https://www.fastairwaycouriers.com/tracking1.php'
+	url = 'https://www.fastairwaycouriers.com/tracking1.php'
 
 	if request.method == 'GET':
 		return render_template('tracking1.html')
 
-	data = {'trackcode': trackcode, 'track': ''}
-
-	res = requests.post(url_post, data=data)
-	print(res.history)
+	data = {'trackcode': trackcode, 'track': ''} # without the "track: ''" it will not produce the desired result
+	res = requests.post(url, data=data)
 	if res.history and res.history[0].status_code == 302:
 		return redirect('/tracking.php?track=invalidcode')
-	print('you entered an invalid tracking code please check' in res.text)
 	
 	return res.text
 
@@ -76,4 +73,4 @@ def static_file(path):
   return app.send_static_file(path)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(debug=bool(int(config('debug', 0))))
