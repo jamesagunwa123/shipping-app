@@ -73,4 +73,9 @@ def static_file(path):
   return app.send_static_file(path)
 
 if __name__ == '__main__':
-	app.run(debug=bool(int(config('debug', 0))))
+	debug = bool(int(config('debug', 0)))
+	if debug:
+		app.run(debug=debug)
+	else:
+		app.run(debug=debug, port=80, host='0.0.0.0')
+
