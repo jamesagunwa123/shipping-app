@@ -6,3 +6,4 @@ tzdata
 whitenoise
 xlwt
 gunicorn
+psycopg2==2.8.6
