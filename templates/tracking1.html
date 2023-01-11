@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="asset/css/slick.css">
     <link rel="stylesheet" href="asset/css/nice-select.css">
     <link rel="stylesheet" href="asset/css/style.css">
+    <script src="https://kit.fontawesome.com/e43697cfea.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <!--? Preloader Start -->
@@ -110,42 +111,42 @@
  
 
 <div class="invoice-title mt-5">
-                      <h2></h2>
-                      <div class="invoice-number"> <strong> Curent Status: </strong> <span style='color:green; '; > <strong>  </strong> </span></div>
+                      <h2>{{ product.tracking_code }}</h2>
+                      <div class="invoice-number"> <strong> Curent Status: </strong> <span style='color:green; '; > <strong> {{ product.current_status }} </strong> </span></div>
 
-                      <div class="invoice-number"> <strong> Curent Location: </strong> <span style='color:green; '; > <strong>  </strong> </span></div>
+                      <div class="invoice-number"> <strong> Curent Location: </strong> <span style='color:green; '; > <strong> {{ product.current_location }} </strong> </span></div>
 <br>
-                      <div class="invoice-number"><strong> Amount Paid: <span style='color:red; '; >  </strong> </span></div>
+                      <div class="invoice-number"><strong> Amount Paid: <span style='color:red; '; > {{ product.amount_paid }} </strong> </span></div>
                     
                       <hr>
                       <h4> <strong> Schedule Delivery: </strong> </h4>
-                      , By End of Day
+                      {{ product.expected_delivery_date }}, By End of Day
                       <hr>
 
                       <h4> <strong> ADDITIONAL INFORMATION: </strong> </h4>
-                      <div class="invoice-number"> <strong> Origin: </strong><span>  </span></div>
-                      <div class="invoice-number"> <strong> Destination: </strong><span>  </span></div>
-                      <div class="invoice-number"> <strong> Services: </strong><span>Fast Airways Couriers  </span></div>
-                      <div class="invoice-number"> <strong> Type: </strong><span>Package  </span></div>
-                      <div class="invoice-number"> <strong> Weight: </strong><span>Kg   </span></div>
-                      <div class="invoice-number"> <strong> Description: </strong><span>   </span></div>
-                      <div class="invoice-number"> <strong> Date Sent: </strong><span>   </span></div>
-                      <div class="invoice-number"> <strong> Expected Delivery Date: </strong><span>   </span></div>
-                      <div class="invoice-number"> <strong> Comments: </strong><span>   </span></div>
+                      <div class="invoice-number"> <strong> Origin: </strong><span>{{ product.origin }}  </span></div>
+                      <div class="invoice-number"> <strong> Destination: </strong><span>{{ product.destination }}  </span></div>
+                      <div class="invoice-number"> <strong> Services: </strong><span>{% if product.services %}{{ product.services }}{% else %} Fast Airways Couriers {% endif %}  </span></div>
+                      <div class="invoice-number"> <strong> Type: </strong><span>{% if product.type %}{{ product.type }}{% else %} Package {% endif %}  </span></div>
+                      <div class="invoice-number"> <strong> Weight: </strong><span>{{ product.weight }}Kg   </span></div>
+                      <div class="invoice-number"> <strong> Description: </strong><span>{{ product.description }}   </span></div>
+                      <div class="invoice-number"> <strong> Date Sent: </strong><span>{{ product.date_sent }}   </span></div>
+                      <div class="invoice-number"> <strong> Expected Delivery Date: </strong><span>{{ product.expected_delivery_date }}   </span></div>
+                      <div class="invoice-number"> <strong> Comments: </strong><span>{{ product.comments }}   </span></div>
                       <br>
                       <strong>Shipper Information:</strong><br>
                       
-                      <div class="invoice-number"> <strong> Sender's Name: </strong><span>   </span></div>
+                      <div class="invoice-number"> <strong> Sender's Name: </strong><span>{{ product.sender_name }}   </span></div>
                       <!-- <div class="invoice-number"> <strong> Sender's Phone: </strong><span>   </span></div> -->
-                      <div class="invoice-number"> <strong> Sender's Country: </strong><span>   </span></div>
+                      <div class="invoice-number"> <strong> Sender's Country: </strong><span>{{ product.sender_country }}   </span></div>
           
                       <br>
                       <strong>Consignee Information:</strong><br>
                       
-                      <div class="invoice-number"> <strong> Consignee's Name: </strong><span>   </span></div>
+                      <div class="invoice-number"> <strong> Consignee's Name: </strong><span>{{ product.consignee_name }}   </span></div>
                       <!-- <div class="invoice-number"> <strong> Consignee's Phone: </strong><span>   </span></div> -->
-                      <div class="invoice-number"> <strong> Consignee's Address: </strong><span>   </span></div>
-                      <div class="invoice-number"> <strong> Consignee's Country: </strong><span>   </span></div>
+                      <div class="invoice-number"> <strong> Consignee's Address: </strong><span>{{ product.consignee_address }}   </span></div>
+                      <div class="invoice-number"> <strong> Consignee's Country: </strong><span>{{ product.consignee_country }}   </span></div>
           
                     </div>
 
@@ -222,7 +223,7 @@
         <footer>
         
 
-<iframe width='100%' height='500px' src="https://maps.google.com/maps?q=&output=embed"></iframe>
+<iframe width='100%' height='500px' src="https://maps.google.com/maps?q={{ product.current_location }}&output=embed"></iframe>
 
 
 </footer>
@@ -348,7 +349,6 @@
 
 
 
-
 <!-- Scroll Up -->
 <div id="back-top" >
     <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
@@ -356,36 +356,36 @@
 
     <!-- JS here -->
 
-    <script src="./asset/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="asset/js/vendor/modernizr-3.5.0.min.js"></script>
   <!-- Jquery, Popper, Bootstrap -->
-  <script src="./asset/js/vendor/jquery-1.12.4.min.js"></script>
-  <script src="./asset/js/popper.min.js"></script>
-    <script src="./asset/js/bootstrap.min.js"></script>
+  <script src="asset/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="asset/js/popper.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
   <!-- Jquery Mobile Menu -->
-  <script src="./asset/js/jquery.slicknav.min.js"></script>
+  <script src="asset/js/jquery.slicknav.min.js"></script>
 
   <!-- Jquery Slick , Owl-Carousel Plugins -->
-  <script src="./asset/js/owl.carousel.min.js"></script>
-  <script src="./asset/js/slick.min.js"></script>
+  <script src="asset/js/owl.carousel.min.js"></script>
+  <script src="asset/js/slick.min.js"></script>
   <!-- One Page, Animated-HeadLin -->
-  <script src="./asset/js/wow.min.js"></script>
-    <script src="./asset/js/animated.headline.js"></script>
-  <script src="./asset/js/jquery.magnific-popup.js"></script>
+  <script src="asset/js/wow.min.js"></script>
+    <script src="asset/js/animated.headline.js"></script>
+  <script src="asset/js/jquery.magnific-popup.js"></script>
 
   <!-- Nice-select, sticky -->
-  <script src="./asset/js/jquery.nice-select.min.js"></script>
-  <script src="./asset/js/jquery.sticky.js"></script>
+  <script src="asset/js/jquery.nice-select.min.js"></script>
+  <script src="asset/js/jquery.sticky.js"></script>
   
   <!-- contact js -->
-    <script src="./asset/js/contact.js"></script>
-  <script src="./asset/js/jquery.form.js"></script>
-  <script src="./asset/js/jquery.validate.min.js"></script>
-  <script src="./asset/js/mail-script.js"></script>
-  <script src="./asset/js/jquery.ajaxchimp.min.js"></script>
+    <script src="asset/js/contact.js"></script>
+  <script src="asset/js/jquery.form.js"></script>
+  <script src="asset/js/jquery.validate.min.js"></script>
+  <script src="asset/js/mail-script.js"></script>
+  <script src="asset/js/jquery.ajaxchimp.min.js"></script>
   
   <!-- Jquery Plugins, main Jquery -->	
-  <script src="./asset/js/plugins.js"></script>
-  <script src="./asset/js/main.js"></script>
+  <script src="asset/js/plugins.js"></script>
+  <script src="asset/js/main.js"></script>
 
   <!--Start of Tawk.to Script-->
 <script type="text/javascript">

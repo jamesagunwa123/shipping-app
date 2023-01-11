@@ -56,6 +56,7 @@
                    <h4 class="" style="color:#2e567a">CONSIGNMENT TRACKING</h4>
       <p style="font-weight: 400;">Input the unique tracking number into the box below to track and know the status of of your shipment</p>
                    <form action="tracking1.php" method="POST" class="needs-validation" novalidate="">
+                    {% csrf_token %}
                         <div class="form-group">
                           <label for="email" style="font-weight: 500;">Enter Tracking Code <i class="far fa-hand-point-down"></i></label>
                           <input id="email" type="text" class="form-control"name="trackcode" placeholder="Enter your consignment number" tabindex="1" required autofocus">
