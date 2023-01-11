@@ -21,3 +21,6 @@ class Product(models.Model):
     consignee_name = models.CharField(max_length=250, blank=True, null=True)
     consignee_address = models.CharField(max_length=250, blank=True, null=True)
     consignee_country = models.CharField(max_length=250, blank=True, null=True)
+
+    def __str__(self):
+        return self.tracking_code
