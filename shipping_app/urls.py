@@ -21,7 +21,7 @@ from core import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html')),
     path('index.php', TemplateView.as_view(template_name='index.html')),
     path('about.php', TemplateView.as_view(template_name='about.html')),
