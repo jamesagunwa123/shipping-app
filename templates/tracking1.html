@@ -120,15 +120,15 @@
                     
                       <hr>
                       <h4> <strong> Schedule Delivery: </strong> </h4>
-                      {{ product.expected_delivery_date }}, By End of Day
+                      {{ product.expected_delivery_date }}
                       <hr>
 
                       <h4> <strong> ADDITIONAL INFORMATION: </strong> </h4>
                       <div class="invoice-number"> <strong> Origin: </strong><span>{{ product.origin }}  </span></div>
                       <div class="invoice-number"> <strong> Destination: </strong><span>{{ product.destination }}  </span></div>
-                      <div class="invoice-number"> <strong> Services: </strong><span>{% if product.services %}{{ product.services }}{% else %} Fast Airways Couriers {% endif %}  </span></div>
-                      <div class="invoice-number"> <strong> Type: </strong><span>{% if product.type %}{{ product.type }}{% else %} Package {% endif %}  </span></div>
-                      <div class="invoice-number"> <strong> Weight: </strong><span>{{ product.weight }}Kg   </span></div>
+                      <div class="invoice-number"> <strong> Services: </strong><span>{{ product.services }} </span></div>
+                      <div class="invoice-number"> <strong> Type: </strong><span>{{ product.type }} </span></div>
+                      <div class="invoice-number"> <strong> Weight: </strong><span>{{ product.weight }}   </span></div>
                       <div class="invoice-number"> <strong> Description: </strong><span>{{ product.description }}   </span></div>
                       <div class="invoice-number"> <strong> Date Sent: </strong><span>{{ product.date_sent }}   </span></div>
                       <div class="invoice-number"> <strong> Expected Delivery Date: </strong><span>{{ product.expected_delivery_date }}   </span></div>
