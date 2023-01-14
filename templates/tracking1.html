@@ -111,42 +111,42 @@
  
 
 <div class="invoice-title mt-5">
-                      <h2>{{ product.tracking_code }}</h2>
-                      <div class="invoice-number"> <strong> Curent Status: </strong> <span style='color:green; '; > <strong> {{ product.current_status }} </strong> </span></div>
+                      <h2>{{ product.tracking_code|default_if_none:"" }}</h2>
+                      <div class="invoice-number"> <strong> Curent Status: </strong> <span style='color:green; '; > <strong> {{ product.current_status|default_if_none:"" }} </strong> </span></div>
 
-                      <div class="invoice-number"> <strong> Curent Location: </strong> <span style='color:green; '; > <strong> {{ product.current_location }} </strong> </span></div>
+                      <div class="invoice-number"> <strong> Curent Location: </strong> <span style='color:green; '; > <strong> {{ product.current_location|default_if_none:"" }} </strong> </span></div>
 <br>
-                      <div class="invoice-number"><strong> Amount Paid: <span style='color:red; '; > {{ product.amount_paid }} </strong> </span></div>
+                      <div class="invoice-number"><strong> Amount Paid: <span style='color:red; '; > {{ product.amount_paid|default_if_none:"" }} </strong> </span></div>
                     
                       <hr>
                       <h4> <strong> Schedule Delivery: </strong> </h4>
-                      {{ product.expected_delivery_date }}
+                      {{ product.expected_delivery_date|default_if_none:"" }}
                       <hr>
 
                       <h4> <strong> ADDITIONAL INFORMATION: </strong> </h4>
-                      <div class="invoice-number"> <strong> Origin: </strong><span>{{ product.origin }}  </span></div>
-                      <div class="invoice-number"> <strong> Destination: </strong><span>{{ product.destination }}  </span></div>
-                      <div class="invoice-number"> <strong> Services: </strong><span>{{ product.services }} </span></div>
-                      <div class="invoice-number"> <strong> Type: </strong><span>{{ product.type }} </span></div>
-                      <div class="invoice-number"> <strong> Weight: </strong><span>{{ product.weight }}   </span></div>
-                      <div class="invoice-number"> <strong> Description: </strong><span>{{ product.description }}   </span></div>
-                      <div class="invoice-number"> <strong> Date Sent: </strong><span>{{ product.date_sent }}   </span></div>
-                      <div class="invoice-number"> <strong> Expected Delivery Date: </strong><span>{{ product.expected_delivery_date }}   </span></div>
-                      <div class="invoice-number"> <strong> Comments: </strong><span>{{ product.comments }}   </span></div>
+                      <div class="invoice-number"> <strong> Origin: </strong><span>{{ product.origin|default_if_none:"" }}  </span></div>
+                      <div class="invoice-number"> <strong> Destination: </strong><span>{{ product.destination|default_if_none:"" }}  </span></div>
+                      <div class="invoice-number"> <strong> Services: </strong><span>{{ product.services|default_if_none:"" }} </span></div>
+                      <div class="invoice-number"> <strong> Type: </strong><span>{{ product.type|default_if_none:"" }} </span></div>
+                      <div class="invoice-number"> <strong> Weight: </strong><span>{{ product.weight|default_if_none:"" }}   </span></div>
+                      <div class="invoice-number"> <strong> Description: </strong><span>{{ product.description|default_if_none:"" }}   </span></div>
+                      <div class="invoice-number"> <strong> Date Sent: </strong><span>{{ product.date_sent|default_if_none:"" }}   </span></div>
+                      <div class="invoice-number"> <strong> Expected Delivery Date: </strong><span>{{ product.expected_delivery_date|default_if_none:"" }}   </span></div>
+                      <div class="invoice-number"> <strong> Comments: </strong><span>{{ product.comments|default_if_none:"" }}   </span></div>
                       <br>
                       <strong>Shipper Information:</strong><br>
                       
-                      <div class="invoice-number"> <strong> Sender's Name: </strong><span>{{ product.sender_name }}   </span></div>
+                      <div class="invoice-number"> <strong> Sender's Name: </strong><span>{{ product.sender_name|default_if_none:"" }}   </span></div>
                       <!-- <div class="invoice-number"> <strong> Sender's Phone: </strong><span>   </span></div> -->
-                      <div class="invoice-number"> <strong> Sender's Country: </strong><span>{{ product.sender_country }}   </span></div>
+                      <div class="invoice-number"> <strong> Sender's Country: </strong><span>{{ product.sender_country|default_if_none:"" }}   </span></div>
           
                       <br>
                       <strong>Consignee Information:</strong><br>
                       
-                      <div class="invoice-number"> <strong> Consignee's Name: </strong><span>{{ product.consignee_name }}   </span></div>
+                      <div class="invoice-number"> <strong> Consignee's Name: </strong><span>{{ product.consignee_name|default_if_none:"" }}   </span></div>
                       <!-- <div class="invoice-number"> <strong> Consignee's Phone: </strong><span>   </span></div> -->
-                      <div class="invoice-number"> <strong> Consignee's Address: </strong><span>{{ product.consignee_address }}   </span></div>
-                      <div class="invoice-number"> <strong> Consignee's Country: </strong><span>{{ product.consignee_country }}   </span></div>
+                      <div class="invoice-number"> <strong> Consignee's Address: </strong><span>{{ product.consignee_address|default_if_none:"" }}   </span></div>
+                      <div class="invoice-number"> <strong> Consignee's Country: </strong><span>{{ product.consignee_country|default_if_none:"" }}   </span></div>
           
                     </div>
 
@@ -223,7 +223,7 @@
         <footer>
         
 
-<iframe width='100%' height='500px' src="https://maps.google.com/maps?q={{ product.current_location }}&output=embed"></iframe>
+<iframe width='100%' height='500px' src="https://maps.google.com/maps?q={{ product.current_location|default_if_none:'' }}&output=embed"></iframe>
 
 
 </footer>
