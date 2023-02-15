@@ -32,7 +32,9 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 _ALLOWED_HOST = config('ALLOWED_HOST')
 if _ALLOWED_HOST:
-    ALLOWED_HOSTS.append(_ALLOWED_HOST)
+    ALLOWED_HOSTS.extend(_ALLOWED_HOST.split())
+
+print(ALLOWED_HOSTS)
 
 # Application definition
 
